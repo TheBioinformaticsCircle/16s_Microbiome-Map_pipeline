@@ -143,6 +143,8 @@ Since identifiers are identical here, we can try relaxing the default arguments 
 If the similarity/identity scores aren't good and we have enough contigs assembled, we can also discard them. In the case of `SRR12479080`, there are 35,021 assembled contigs. The failed-to-assemble group is ~3.08% of the pairs.
 
 #### Filtering and Trimming
+Recall that the average length of the V4 region is ~250 bps. We need to exclude contigs that are significantly longer or shorter
+![Contig Lengths Distributions](./qc_reports/contig_lengths_distributions.png)
 
 #### Dereplication
 
