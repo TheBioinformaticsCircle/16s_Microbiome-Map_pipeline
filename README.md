@@ -2,7 +2,7 @@
 Sample: [SAMN15860556](https://www.ncbi.nlm.nih.gov/biosample/SAMN15860556/)
 
 ## Sample Background
-SAMN15860556 contains **paired-end V4 regions of 16S rRNA** sequences from stool samples [1]. Sequencing was done using Illumina MiSeq with targeted-capture.
+SAMN15860556 contains **paired-end V4 regions of 16S rRNA** sequences from stool samples [[1]](#1). Sequencing was done using Illumina MiSeq with targeted-capture.
 
 During targeted capture, certain genomic regions (e.g. V4) or genes are captured via hybridization to target-specific biotinylated probes. The probe-sequence hybrid is then pulled down and sequenced with next-generation sequencing (NGS)
 
@@ -73,7 +73,7 @@ The first step is to assemble contigs from the raw reads to reconstruct the 16S 
 1. each read is 150 bp in length but the V4 region of 16S rRNA is 250-255bp long
 2. our data is paired-end suggesting that there is ~95-100bp overlap between the 2 reads. 
 
-To build contigs we can use [FLASh](https://ccb.jhu.edu/software/FLASH/) [2]
+To build contigs we can use [FLASh](https://ccb.jhu.edu/software/FLASH/) [[2]](#2).
 ```bash
 cd SRR12479080
 flash SRR12479080_1.fastq SRR12479080_2.fastq
@@ -123,5 +123,5 @@ remove contaminants, e.g. 18S rRNA, mitochondrial/chloroplast/Archaeal 16S rRNA,
 ### Diversity & Statistical Analysis
 
 ## References
-1.  Wu Z, Byrd DA, Wan Y, et al. The oral microbiome and breast cancer and nonmalignant breast disease, and its relationship with the fecal microbiome in the Ghana Breast Health Study. Int J Cancer. 2022; 151(8): 1248-1260. doi:[10.1002/ijc.34145](https://doi.org/10.1002/ijc.34145)
-2. Tanja Magoč, Steven L. Salzberg, FLASH: fast length adjustment of short reads to improve genome assemblies, Bioinformatics, Volume 27, Issue 21, November 2011, Pages 2957–2963, [https://doi.org/10.1093/bioinformatics/btr507](https://doi.org/10.1093/bioinformatics/btr507)
+<a id="1">[1]</a> Wu Z, Byrd DA, Wan Y, et al. The oral microbiome and breast cancer and nonmalignant breast disease, and its relationship with the fecal microbiome in the Ghana Breast Health Study. Int J Cancer. 2022; 151(8): 1248-1260. doi:[10.1002/ijc.34145](https://doi.org/10.1002/ijc.34145)
+<a id="2">[2]</a> Tanja Magoč, Steven L. Salzberg, FLASH: fast length adjustment of short reads to improve genome assemblies, Bioinformatics, Volume 27, Issue 21, November 2011, Pages 2957–2963, [https://doi.org/10.1093/bioinformatics/btr507](https://doi.org/10.1093/bioinformatics/btr507)
