@@ -123,6 +123,6 @@ remove contaminants, e.g. 18S rRNA, mitochondrial/chloroplast/Archaeal 16S rRNA,
 ### Diversity & Statistical Analysis
 
 ## References
-<a id="1">[1]</a> Wu Z, Byrd DA, Wan Y, et al. The oral microbiome and breast cancer and nonmalignant breast disease, and its relationship with the fecal microbiome in the Ghana Breast Health Study. Int J Cancer. 2022; 151(8): 1248-1260. doi:[10.1002/ijc.34145](https://doi.org/10.1002/ijc.34145).
+<a id="1">[1]</a> Wu Z, Byrd DA, Wan Y, *et al*. The oral microbiome and breast cancer and nonmalignant breast disease, and its relationship with the fecal microbiome in the Ghana Breast Health Study. *Int J Cancer*. 2022; 151(8): 1248-1260. doi:[10.1002/ijc.34145](https://doi.org/10.1002/ijc.34145).
 
-<a id="2">[2]</a> Tanja Magoč, Steven L. Salzberg, FLASH: fast length adjustment of short reads to improve genome assemblies, Bioinformatics, Volume 27, Issue 21, November 2011, Pages 2957–2963, [https://doi.org/10.1093/bioinformatics/btr507](https://doi.org/10.1093/bioinformatics/btr507).
+<a id="2">[2]</a> Tanja Magoč, Steven L. Salzberg. FLASH: fast length adjustment of short reads to improve genome assemblies. *Bioinformatics*. 2011; 27(21): 2957–2963. doi: [10.1093/bioinformatics/btr507](https://doi.org/10.1093/bioinformatics/btr507).
