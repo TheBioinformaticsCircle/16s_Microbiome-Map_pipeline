@@ -1,0 +1,19 @@
+1: Metagenome or environmental sample from metagenome
+Identifiers: BioSample: SAMN15860556; Sample name: GBHS01430; SRA: SRS7228564
+Organism: metagenome
+Attributes:
+    /SampleID="GBHS01430"
+    /CONSENSUS_DIAG="3)Benign"
+    /sample type="stool"
+    /Case_Control="Case"
+    /host="Homo sapiens"
+    /collection date="2017-03-16"
+    /geographic location="Ghana"
+    /latitude and longitude="NA"
+    /seq_methods="Illumina MiSeq"
+    /lib_const_method="paired-end"
+    /target_gene="16S rRNA"
+    /target_subfragment="V4"
+Accession: SAMN15860556	ID: 15860556
+
+
