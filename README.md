@@ -12,12 +12,7 @@ The associated sequence run of this sample, [SRR12479080](https://trace.ncbi.nlm
 
 ![SRR12479080 Phred Quality Score Distribution](/assets/phred_qs_dist.png)
 
-Recall that the Phred quality score measures the quality (and thereby confidence) of the reported nucleobase inferred from sequencing. It's calculated as 
-$$
-Q = -10 log_{10}P
-$$
-
-where P is the probability of base-call error. That is, a base whose Phred QS is 30 has a $10^-3$ chance of being incorrect. Phred scores are reported in FASTQ files as ASCII characters signifying scores in the range of [0, 40] (see [here](https://en.wikipedia.org/wiki/Phred_quality_score#Symbols) for a map of ASCII character to score and associated base-call error probability). A negatively-skewed Phred QS distribution then is promising as it suggests that the average sequence is of high-quality for a reasonable QS cutoff, e.g. 30.
+Recall that the Phred quality score measures the quality (and thereby confidence) of the reported nucleobase inferred from sequencing. It's calculated as $Q = -10 log_{10}P$ where $P$ is the probability of base-call error. That is, a base whose Phred QS is 30 has a $10^{-3}$ chance of being incorrect. Phred scores are reported in FASTQ files as ASCII characters signifying scores in the range of [0, 40] (see [here](https://en.wikipedia.org/wiki/Phred_quality_score#Symbols) for a map of ASCII character to score and associated base-call error probability). A negatively-skewed Phred QS distribution then is promising as it suggests that the average sequence is of high-quality for a reasonable QS cutoff, e.g. 30.
 
 ## Tools
 For each tool, follow your OS's installation instructions:
