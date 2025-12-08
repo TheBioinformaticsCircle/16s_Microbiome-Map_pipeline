@@ -48,7 +48,7 @@ where:
 ### Getting the Data
 Using SRA Toolkit's fasterq-dump, fetch SRR12479080 with
 ```bash
-cd raw_data && mkdir SRR12479080 && fasterq-dump SRR12479080
+> cd raw_data && mkdir SRR12479080 && fasterq-dump SRR12479080
 ```
 
 `fasterq-dump` automatically splits paired-end FASTQ files into 2 read files labelled `[ID]_1.fastq` and `[ID]_2.fastq` for forward and reverse, respectively. Each entry in the file is organized as 
@@ -75,8 +75,48 @@ The first step is to assemble contigs from the raw reads to reconstruct the 16S 
 
 To build contigs we can use [FLASh](https://ccb.jhu.edu/software/FLASH/) [[2]](#2).
 ```bash
-cd SRR12479080
-flash SRR12479080_1.fastq SRR12479080_2.fastq
+> cd SRR12479080
+> flash SRR12479080_1.fastq SRR12479080_2.fastq
+
+[FLASH] Starting FLASH v1.2.11
+[FLASH] Fast Length Adjustment of SHort reads
+[FLASH]
+[FLASH] Input files:
+[FLASH]     SRR12479080_1.fastq
+[FLASH]     SRR12479080_2.fastq
+[FLASH]
+[FLASH] Output files:
+[FLASH]     ./out.extendedFrags.fastq
+[FLASH]     ./out.notCombined_1.fastq
+[FLASH]     ./out.notCombined_2.fastq
+[FLASH]     ./out.hist
+[FLASH]     ./out.histogram
+[FLASH]
+[FLASH] Parameters:
+[FLASH]     Min overlap:           10
+[FLASH]     Max overlap:           65
+[FLASH]     Max mismatch density:  0.250000
+[FLASH]     Allow "outie" pairs:   false
+[FLASH]     Cap mismatch quals:    false
+[FLASH]     Combiner threads:      8
+[FLASH]     Input format:          FASTQ, phred_offset=33
+[FLASH]     Output format:         FASTQ, phred_offset=33
+[FLASH]
+[FLASH] Starting reader and writer threads
+[FLASH] Starting 8 combiner threads
+[FLASH] Processed 25000 read pairs
+[FLASH] Processed 36136 read pairs
+[FLASH]
+[FLASH] Read combination statistics:
+[FLASH]     Total pairs:      36136
+[FLASH]     Combined pairs:   35021
+[FLASH]     Uncombined pairs: 1115
+[FLASH]     Percent combined: 96.91%
+[FLASH]
+[FLASH] Writing histogram files.
+[FLASH]
+[FLASH] FLASH v1.2.11 complete!
+[FLASH] 0.109 seconds elapsed
 ```
 with default paramters. The output of FLASh is as follows:
 - `out.extendedFrags.fastq`: merged reads
@@ -89,18 +129,18 @@ It's a good spot to pause here and inspect how many of each read failed to assem
 
 ```bash
 # get sequence identifiers from each not combined set
-perl -lne '@f = /^@(\S+)\s+/ and print join "\t", @f;' out.notCombined_1.fastq > ids_gene_ids_1.tsv
+> perl -lne '@f = /^@(\S+)\s+/ and print join "\t", @f;' out.notCombined_1.fastq > ids_gene_ids_1.tsv
 
-perl -lne '@f = /^@(\S+)\s+/ and print join "\t", @f;' out.notCombined_2.fastq > ids_gene_ids_2.tsv
+> perl -lne '@f = /^@(\S+)\s+/ and print join "\t", @f;' out.notCombined_2.fastq > ids_gene_ids_2.tsv
 
 # check if they correspond to the same pairs
-cmp --silent ids_gene_ids_1.tsv ids_gene_ids_2.tsv||echo "There are different identifiers"
+> cmp --silent ids_gene_ids_1.tsv ids_gene_ids_2.tsv||echo "There are different identifiers"
 ```
 
 Since identifiers are identical here, we can try relaxing the default arguments of `flash` if their inspected alignments seem to have a good similarity or identity scores. Candidate options:
 - `-O, --allow-outies`: combine read pairs in the "outie" orientation
 
-If the similarity/identity scores aren't good and we have enough contigs assembled, we can also discard them. In the case of `SRR12479080`, there are 35,021 assembled contigs. The failed-to-assemble group is ~3.2% of the pairs.
+If the similarity/identity scores aren't good and we have enough contigs assembled, we can also discard them. In the case of `SRR12479080`, there are 35,021 assembled contigs. The failed-to-assemble group is ~3.08% of the pairs.
 
 #### Filtering and Trimming
 
