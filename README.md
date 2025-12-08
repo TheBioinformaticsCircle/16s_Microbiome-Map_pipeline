@@ -6,7 +6,7 @@ SAMN15860556 contains **paired-end V4 regions of 16S rRNA** sequences from stool
 
 During targeted capture, certain genomic regions (e.g. V4) or genes are captured via hybridization to target-specific biotinylated probes. The probe-sequence hybrid is then pulled down and sequenced with next-generation sequencing (NGS)
 
-![Capture of targeted sequences (image source: https://www.bioarrow.com/en/page/long-read-sequencing)](./assets/ngs-target-capture-hybridization.png "Capture of targeted sequences (image source: https://www.bioarrow.com/en/page/long-read-sequencing)")
+![Capture of targeted sequences (image source: https://www.bioarrow.com/en/page/long-read-sequencing)](./assets/ngs-target-capture-hybridization_50.png "Capture of targeted sequences (image source: https://www.bioarrow.com/en/page/long-read-sequencing)")
 
 The associated sequence run of this sample, [SRR12479080](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=SRR12479080&display=metadata), displays a Phred QS distribution that is negatively-skewed 
 
