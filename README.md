@@ -49,5 +49,21 @@ Using SRA Toolkit's fasterq-dump, fetch SRR12479080 with
 cd raw_data && fasterq-dump SRR12479080
 ```
 
+`fasterq-dump` automatically splits paired-end FASTQ files into 2 read files labelled `[ID]_1.fastq` and `[ID]_2.fastq`. Each entry in the file is organized as 
+```
+@[sequence identifier] [ID] [length]
+[raw sequence nucloetides]
++[sequence identifier] [ID] [length]
+[ASCII quality score for each NT in the raw sequence]
+```
+e.g.
+```
+@SRR12479080.36137 36137 length=150
+CCTGTTTGCTACCCACACTTTCGAGCCTCAGCGTCAGTTGGTGCCCAGTAGGCCGCCTTCGCCACTGGTGTTCCTCCCGATATCTACGCATTCCACCGCTACACCGGGAATTCCGCCTACCTCTGCACTACTCAAGAAAAACAGTTTTGA
++SRR12479080.36137 36137 length=150
+AAAAAF@CFFFFGGGGGGFGFEEAGGGH4F3BE2EE2FGFCEFHGCEABF5FD3A0EAAGGEFEEFC2BBGGG4FHFGE?EEEGHGFGEEFEHHGHCEEFEEFGC/>///BFDFC/AA/FGBFHFF<C1<FGHFFDDGFHHG.0F1F1<.
+```
+If `fasterq-dump` can't find the paired read for a sequence, it will output that in a separate file.
+
 ## References
 1.  Wu Z, Byrd DA, Wan Y, et al. The oral microbiome and breast cancer and nonmalignant breast disease, and its relationship with the fecal microbiome in the Ghana Breast Health Study. Int J Cancer. 2022; 151(8): 1248-1260. doi:[10.1002/ijc.34145](https://doi.org/10.1002/ijc.34145)
