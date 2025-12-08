@@ -25,6 +25,7 @@ For each tool, follow your OS's installation instructions:
 
 ## Workflow
 ### Repo structure
+```
 - /
 |_ assets/
 |_ raw_data/
@@ -33,6 +34,7 @@ For each tool, follow your OS's installation instructions:
 |_ results/
 |_ scripts/
 |_ metadata/
+```
 
 where:
 - `assets` contains images for README.md
