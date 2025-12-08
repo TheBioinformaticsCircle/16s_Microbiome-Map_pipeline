@@ -24,10 +24,29 @@ For each tool, follow your OS's installation instructions:
 
 
 ## Workflow
+### Repo structure
+- /
+|_ assets/
+|_ raw_data/
+|_ qc_reports/
+|_ processed_data
+|_ results/
+|_ scripts/
+|_ metadata/
+
+where:
+- `assets` contains images for README.md
+- `raw_data` contains all FASTQ files
+- `qc_reports` contains quality data of raw sequences
+- `processed_data` contains FASTQ files after QC trimming, and filtering
+- `results` contains feature tables, clusters, taxonomy, etc.
+- `scripts` contains analysis scripts
+- `metadata` contains samples' metadata
+
 ### Getting the Data
 Using SRA Toolkit's fasterq-dump, fetch SRR12479080 with
 ```bash
-fasterq-dump SRR12479080
+cd raw_data && fasterq-dump SRR12479080
 ```
 
 ## References
