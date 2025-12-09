@@ -144,6 +144,7 @@ If the similarity/identity scores aren't good and we have enough contigs assembl
 
 #### Filtering and Trimming
 Recall that the average length of the V4 region is ~250 bps. We need to exclude contigs that are significantly longer or shorter
+
 ![Contig Lengths Distributions](./qc_reports/contig_lengths_distributions.png)
 
 #### Dereplication
