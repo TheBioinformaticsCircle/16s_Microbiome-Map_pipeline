@@ -31,7 +31,7 @@ def plot_contigs_distribution():
         kde=True,
     )
     plt.xlabel("Length (bp)")
-    plt.xlabel("Frequency (%)")
+    plt.ylabel("Frequency (%)")
     plt.vlines(mean, 0, 100, color="k")
     plt.vlines(mean - std, 0, 100, color="k", ls="--")
     plt.vlines(mean + std, 0, 100, color="k", ls="--")
