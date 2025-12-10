@@ -1,0 +1,20 @@
+BioSample: SAMN15860559; Sample name: GBHS70444; SRA: SRS7228568
+Organism:
+	metagenome
+Package:
+	Metagenome or environmental; version 1.0
+Attributes:
+	sample type	stool
+	host	Homo sapiens
+	collection date	2017-03-16
+	geographic location	Ghana
+	latitude and longitude	NA
+	SampleID	GBHS70444
+	CONSENSUS_DIAG	3)Benign
+	Case_Control	Case
+	seq_methods	Illumina MiSeq
+	lib_const_method	paired-end
+	target_gene	16S rRNA
+	target_subfragment	V4
+BioProject:
+	PRJNA658160
